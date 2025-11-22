@@ -1,0 +1,140 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0f0f1e;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.card {
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  color: #00d4ff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Button styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #00d4ff;
+  color: #0f0f1e;
+}
+
+.btn-primary:hover {
+  background-color: #00b8e6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 212, 255, 0.3);
+}
+
+.btn-secondary {
+  background-color: #2a2a3e;
+  color: #e0e0e0;
+}
+
+.btn-secondary:hover {
+  background-color: #3a3a4e;
+}
+
+.btn-danger {
+  background-color: #ff4757;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #ee3344;
+}
+
+/* Loading spinner */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  color: #00d4ff;
+  font-size: 1.2rem;
+}
+
+.spinner {
+  border: 3px solid rgba(0, 212, 255, 0.1);
+  border-top: 3px solid #00d4ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-right: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error {
+  background-color: rgba(255, 71, 87, 0.1);
+  border: 1px solid #ff4757;
+  color: #ff4757;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.table th {
+  background-color: #2a2a3e;
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 212, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}

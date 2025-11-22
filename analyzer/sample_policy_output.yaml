@@ -1,0 +1,39 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: backend-policy
+  namespace: default
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+      version: v1
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: frontend
+        version: v1
+    toPorts:
+    - ports:
+      - port: "8080"
+        protocol: TCP
+      rules:
+        http:
+        - method: GET
+          path: /api/users
+        - method: POST
+          path: /api/users
+        - method: GET
+          path: /api/products
+  - fromEndpoints:
+    - matchLabels:
+        app: prometheus
+        component: server
+    toPorts:
+    - ports:
+      - port: "9090"
+        protocol: TCP
+      rules:
+        http:
+        - method: GET
+          path: /metrics

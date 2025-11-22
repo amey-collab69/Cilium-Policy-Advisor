@@ -1,0 +1,89 @@
+[
+  {
+    "flow_id": "550e8400-e29b-41d4-a716-446655440001",
+    "timestamp": "2025-11-19T10:30:00Z",
+    "source": {
+      "namespace": "default",
+      "pod": "frontend-abc123",
+      "labels": {
+        "app": "frontend",
+        "version": "v1"
+      }
+    },
+    "destination": {
+      "namespace": "default",
+      "pod": "backend-xyz789",
+      "labels": {
+        "app": "backend",
+        "version": "v1"
+      }
+    },
+    "l4": {
+      "TCP": {
+        "destination_port": 8080
+      }
+    },
+    "l7": {
+      "http": {
+        "method": "GET",
+        "path": "/api/users"
+      }
+    }
+  },
+  {
+    "flow_id": "550e8400-e29b-41d4-a716-446655440002",
+    "timestamp": "2025-11-19T10:31:00Z",
+    "source": {
+      "namespace": "default",
+      "pod": "frontend-abc123",
+      "labels": {
+        "app": "frontend",
+        "version": "v1"
+      }
+    },
+    "destination": {
+      "namespace": "default",
+      "pod": "backend-xyz789",
+      "labels": {
+        "app": "backend",
+        "version": "v1"
+      }
+    },
+    "l4": {
+      "TCP": {
+        "destination_port": 8080
+      }
+    },
+    "l7": {
+      "http": {
+        "method": "POST",
+        "path": "/api/users"
+      }
+    }
+  },
+  {
+    "flow_id": "550e8400-e29b-41d4-a716-446655440003",
+    "timestamp": "2025-11-19T10:32:00Z",
+    "source": {
+      "namespace": "default",
+      "pod": "backend-xyz789",
+      "labels": {
+        "app": "backend",
+        "version": "v1"
+      }
+    },
+    "destination": {
+      "namespace": "default",
+      "pod": "database-def456",
+      "labels": {
+        "app": "database",
+        "tier": "data"
+      }
+    },
+    "l4": {
+      "TCP": {
+        "destination_port": 5432
+      }
+    }
+  }
+]
